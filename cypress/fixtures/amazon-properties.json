@@ -1,0 +1,10 @@
+{
+    "baseUriProtocol": "https:",
+    "baseUriHost": "www.amazon.co.uk" ,
+    "acceptCookiesButton": "#sp-cc-accept",
+    "NavigationBar": "#nav-belt",
+    "signInLink": "#nav-link-accountList-nav-line-1",
+    "createAccountButton": "#createAccountSubmit",
+    "signInText": "Sign in",
+    "createAccountText": "Create account"
+}

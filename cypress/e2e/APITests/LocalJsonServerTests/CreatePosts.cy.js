@@ -6,7 +6,7 @@ const authorName = faker.name.fullName();
 
 describe('create post', () => {
 
-    const properties = require('../../fixtures/properties')
+    const properties = require('../../../fixtures/api-properties')
     let baseUrl =  properties.baseUrl
     let path = properties.postsPath 
 

@@ -20,13 +20,13 @@ describe('get users', ()=>{
     it('get users by ID', ()=>{
         cy.request({
             method: 'GET',
-            url: baseUrl + '/users/1526177',
+            url: baseUrl + '/users/1550055',
             headers: {
                 'authorization': 'Bearer ' + bearerToken
             }
         }).then((res)=>{
             expect(res.status).to.equal(200)
-            expect(res.body.name).to.equal('Vimala Trivedi III')
+            expect(res.body.name).to.equal('Balagovind Sharma')
         })
     })
 })   

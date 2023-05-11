@@ -7,7 +7,7 @@ describe('post user requesty', () => {
     let randomText = ""
     let testEmail = ""
 
-    const dataJson = require('../../fixtures/createUser') //if using this then remove the "cy.fixture('createUser').then((payload) => " and surrounding braces and replace "payload" with "dataJson"
+    const dataJson = require('../../../fixtures/createUser') //if using this then remove the "cy.fixture('createUser').then((payload) => " and surrounding braces and replace "payload" with "dataJson"
 
     it('create a user', () => {
 
