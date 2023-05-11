@@ -1,7 +1,7 @@
 /// <reference types = "Cypress" />
 
 describe('post user requesty', () => {
-    let bearerToken = '4960e8713a21406e3951a521e574734a2e0fea103f35544bad5d450914c4a30a'
+    let bearerToken = 'token here'
     let baseUrl = 'https://gorest.co.in/public/v2'
 
     let randomText = ""
