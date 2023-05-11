@@ -8,6 +8,7 @@ describe('get users', ()=>{
         cy.request({
             method: 'GET',
             url: baseUrl + '/users/',
+            
             headers: {
             'authorization': 'Bearer ' + bearerToken
             }

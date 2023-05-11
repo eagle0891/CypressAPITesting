@@ -4,18 +4,6 @@ import { faker } from '@faker-js/faker';
 const bookName = faker.random.words();
 const authorName = faker.name.fullName();
 
-// const bookName = Cypress._.range(1, 1).map((_, k) => {
-//     return {
-//         title: faker.name.findName(),
-//     }
-// })
-
-// const authorName = Cypress._.range(1, 1).map((_, k) => {
-//     return {
-//         author: faker.name.findName()
-//     }
-// })
-
 describe('create post', () => {
 
     const properties = require('../../fixtures/properties')
