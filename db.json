@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "Testing",
+      "author": "Jake Harrison"
+    },
+    {
+      "title": "ghffghfghfh",
+      "author": "Tfhfghf fgfhfh",
+      "id": 3
+    },
+    {
+      "title": "Levi Jaskolski II",
+      "author": "Mrs. Brandon Hoeger",
+      "id": 14
+    },
+    {
+      "title": "Gene Turner",
+      "author": "Fannie Kuhn",
+      "id": 15
+    },
+    {
+      "title": "Northeast female second",
+      "author": "Lee Cassin",
+      "id": 16
+    },
+    {
+      "title": "Loan architectures bypassing",
+      "author": "Boyd Spencer",
+      "id": 17
+    },
+    {
+      "title": "online",
+      "author": "Lynette Spencer",
+      "id": 18
+    },
+    {
+      "title": "synthesizing solid",
+      "author": "Johnny Kihn",
+      "id": 19
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

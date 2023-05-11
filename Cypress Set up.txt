@@ -1,0 +1,51 @@
+Terminal > go to the folder
+npm init
+
+Then: 
+package name: (cypressapitesting)
+version: (1.0.0)
+description: Cypress API Testing Framework
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Ugo Agwo
+license: (ISC)
+
+Install Cypress: https://docs.cypress.io/guides/getting-started/installing-cypress
+1. npm install cypress --save-dev 
+ --save-dev saves the depenedencies to the project for other devs
+ - node modules will be installed
+
+2. Run cypress: 
+./node_modules/.bin/cypress open
+OR npx cypress open
+OR yarn run cypress open (to install Yarn run this: npm install --global yarn)
+
+3. Select the test type from the UI > then the Cypress folder will appear in the explorer
+
+
+Writing code: 
+Create a file
+To get auto suggestions type this at the top of the file: /// <reference types = "Cypress" />
+
+If new test files do not show in in Cypress UI, do one of the following :
+1. rename the file with extension "<filename>.cy.js" 
+
+2. add this to the cypress.config.js
+specPattern: "cypress/e2e/**/*.*",
+so that you have this: 
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    specPattern: "cypress/e2e/**/*.*",
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+});
+
+
+Chai is a library for assertions etc
+Mocha is a library for the framework
