@@ -1,26 +1,26 @@
+import * as amazonModule from '../../../support/AmazonModules/amazon-module.cy'
+
 const prop = require("../../../fixtures/amazon-properties.json")
 
 describe('Homepage navigation', () => {
     before('Visit site', function(){
-        cy.viewport('iphone-8')
-        cy.visit(prop.baseUriProtocol + '//' + prop.baseUriHost)
-        cy.get(prop.acceptCookiesButton).click()
+        amazonModule.visitAmazonAndAcceptCookies()
     })
 
     it('Navigate to homepage', () => {
         // cy.log(this.tests.parent.title)
-        cy.get(prop.NavigationBar).should('be.visible')
+        amazonModule.assertElementIsVisible(amazonModule.getNavigationBar)
     })
 
     it('Sign in / sign-up navigation', () => {
-        cy.get(prop.signInLink).click()
-        cy.contains(prop.signInText).should('be.visible')
-        cy.get(prop.createAccountButton).click()
-        cy.contains(prop.createAccountText).should('be.visible')
+        amazonModule.clickSignInLink()
+        amazonModule.getSignInText().should('be.visible')
+        amazonModule.clickCreateAccountButton()
+        amazonModule.getCreateAccountText().should('be.visible')
         cy.go('back') //cy.go(-1)
-        cy.contains(prop.signInText).should('be.visible')
+        amazonModule.getSignInText().should('be.visible')
         cy.go('forward') //cy.go(1)
-        cy.contains(prop.createAccountText).should('be.visible')
+        amazonModule.getCreateAccountText().should('be.visible')
     })
 
     it('Local storage', () => {
@@ -40,8 +40,7 @@ describe('Homepage navigation', () => {
     })
 
     it('CY test - Uri properties', () => {
-        cy.location('protocol').should('eq', prop.baseUriProtocol)
-        cy.location('host').should('eq', prop.baseUriHost)
+        amazonModule.verifyUriProtocols()
     })
 
     it('Page reload', () => {

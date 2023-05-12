@@ -4,29 +4,29 @@ const prop = require('../../../fixtures/amazon-properties')
 
 describe('PLP test', () =>{
 
-    before('Visit site', function(){
+    before('Visit site', () => {
         amazonModule.visitAmazonAndAcceptCookies()
     })
 
     it('Select a specific product', () => {
-        amazonModule.searchForItem('watch')
+        amazonModule.searchForItem(prop.searchTerm)
         amazonModule.clickSearchButton()
 
-        const productItem = amazonModule.getProductGalleryTile()
-        productItem.should('have.length.gt', 0)
+        const productItemList = amazonModule.getProductGalleryTile()
+        productItemList.should('have.length.gt', 0)
 
-        productItem
+        productItemList
         .each(($element) => {
             const productBrandText = $element.find(prop.productBrandText).text()
             const productTitleLinkText = $element.find(prop.productTitleLink).text()
             const productPriceText = $element.find(prop.productPrice).text()
             const productImage = $element.find(prop.productImage)
             const productTitleLink = $element.find(prop.productTitleLink)
-            if(productBrandText=='Casio'){
-                cy.log('Casio brand: ' + productBrandText)
-                cy.log('Casio product link title: ' + productTitleLinkText)
-                cy.log('Casio product price: ' + productPriceText)
-                cy.log('Casio product image hyperlink: ' + productImage.attr('src'))
+            if(productBrandText==prop.searchTerm){
+                cy.log(prop.searchTerm + ' brand: ' + productBrandText)
+                cy.log(prop.searchTerm + ' product link title: ' + productTitleLinkText)
+                cy.log(prop.searchTerm + ' product price: ' + productPriceText)
+                cy.log(prop.searchTerm + ' product image hyperlink: ' + productImage.attr('src'))
                 productTitleLink.click()
             }
         })
