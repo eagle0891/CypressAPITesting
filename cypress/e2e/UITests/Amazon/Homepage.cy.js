@@ -2,6 +2,7 @@ const prop = require("../../../fixtures/amazon-properties.json")
 
 describe('Homepage navigation', () => {
     before('Visit site', function(){
+        cy.viewport('iphone-8')
         cy.visit(prop.baseUriProtocol + '//' + prop.baseUriHost)
         cy.get(prop.acceptCookiesButton).click()
     })
@@ -35,8 +36,6 @@ describe('Homepage navigation', () => {
             const loc = win.location
             expect(loc.protocol).to.eql(prop.baseUriProtocol)
             expect(loc.host).to.eql(prop.baseUriHost)
-            // expect(loc.pathname).to.eql('/ap/signin')
-            // expect(loc.port).to.eql('')
         })
     })
 
@@ -47,5 +46,18 @@ describe('Homepage navigation', () => {
 
     it('Page reload', () => {
         cy.reload()
+    })
+
+    it.only('Cookie test', () => {
+        //create cookie
+        cy.setCookie('CypressTestCookie', 'testcookie123456poiuy')
+        //read cookie
+        cy.getCookie('CypressTestCookie')
+        //update cookie
+        cy.setCookie('CypressTestCookie', 'testcookie123456poiuy-edit')
+        cy.getCookie('CypressTestCookie')
+        //clear cookie
+        cy.clearCookie('CypressTestCookie')
+        cy.getCookie('CypressTestCookie')
     })
 })
