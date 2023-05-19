@@ -59,4 +59,36 @@ describe('Homepage navigation', () => {
         cy.clearCookie('CypressTestCookie')
         cy.getCookie('CypressTestCookie')
     })
+
+    it('Verify Amazon logo is present', () => {
+        cy.get('#nav-logo a[aria-label="Amazon.co.uk"]')
+        .should('be.visible')
+    })
+
+    it.only('Click through header links and verify URL redirect', () => {
+        cy.get('#nav-xshop .nav-a').as('headerLinks');
+        cy.get('@headerLinks')
+        .its('length')
+        .then((len) => [...Array(len).keys()])
+        .each((index) => {
+            let extractedHref;
+            cy.get('@headerLinks').eq(index).click()
+            cy.get('@headerLinks').eq(index)  
+            .invoke('attr', 'href')
+            .then(href => {
+                extractedHref = href;
+            }).then(()=>{
+                if(extractedHref=='/Kindle-eBooks-books/b/?ie=UTF8&node=341689031&ref_=nav_cs_kindle_books') {
+                    cy.url().should('contain', 'https://www.amazon.co.uk').and('contain', '/kindle-dbs/storefront?storeType=browse');
+                }
+                else {
+                    const truncatedValue = extractedHref.substring(extractedHref.indexOf('?'));
+                
+                        cy.url().should('contain', 'https://www.amazon.co.uk').and('contain', truncatedValue);
+                        amazonModule.catchException();
+                    }
+                });
+            amazonModule.catchException();
+        })  
+    })
 })

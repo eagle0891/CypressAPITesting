@@ -1,4 +1,4 @@
-const prop = require('../../fixtures/amazon-properties')
+const prop = require('../../fixtures/amazon-properties.json')
 
 export const visitAmazonAndAcceptCookies = () => {
     cy.viewport('macbook-16')
@@ -65,6 +65,23 @@ export const assertElementIsVisible = (element) => {
 
 export const clickElement = (element) => {
     cy.get(element).click()
+}
+
+export const catchException = () => {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        if (err.message.includes('b.cardModuleFactory is not a function')) {
+            return false
+          }
+          if (err.message.includes('jQuery already registered by AmazonUIjQuery, reregistered by AmazonUIjQuery')) {
+            return false
+          }
+          if (err.message.includes('EmeNotSupportedError:')) {
+            return false
+          }
+          if (err.message.includes('EmeNotSupportedError:')) {
+            return false
+          }
+    })
 }
 
 

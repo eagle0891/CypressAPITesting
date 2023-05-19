@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" time="81.609">
+  <testsuite name="Root Suite" timestamp="2023-05-19T10:25:28" tests="0" file="cypress\e2e\UITests\Amazon\Login.spec.cy.js" time="0" failures="0"/>
+  <testsuite name="login" timestamp="2023-05-19T10:25:28" tests="1" time="0.000" failures="0"/>
+  <testsuite name="PLP test" timestamp="2023-05-19T11:30:21" tests="2" time="50.867" failures="0">
+    <testcase name="PLP test Select a specific product" time="46.314" classname="Select a specific product"/>
+    <testcase name="PLP test Select a specific product" time="30.274" classname="Select a specific product"/>
+  </testsuite>
+  <testsuite name="Homepage navigation" timestamp="2023-05-19T10:24:00" tests="8" time="81.609" failures="0">
+    <testcase name="Homepage navigation Navigate to homepage" time="8.710" classname="Navigate to homepage"/>
+    <testcase name="Homepage navigation Sign in / sign-up navigation" time="10.369" classname="Sign in / sign-up navigation"/>
+    <testcase name="Homepage navigation Local storage" time="7.409" classname="Local storage"/>
+    <testcase name="Homepage navigation Clear local storage" time="9.817" classname="Clear local storage"/>
+    <testcase name="Homepage navigation Window Test - Uri properties" time="6.813" classname="Window Test - Uri properties"/>
+    <testcase name="Homepage navigation CY test - Uri properties" time="6.854" classname="CY test - Uri properties"/>
+    <testcase name="Homepage navigation Page reload" time="17.542" classname="Page reload"/>
+    <testcase name="Homepage navigation Cookie test" time="8.971" classname="Cookie test"/>
+  </testsuite>
+</testsuites>

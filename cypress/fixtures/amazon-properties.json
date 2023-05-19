@@ -17,5 +17,6 @@
     "productPrice": ".s-price-instructions-style .a-price .a-offscreen",
     "productImage": ".s-image-tall-aspect .s-image",
 
-    "searchTerm": "Casio"
+    "searchTerm": "watch",
+    "brandTerm": "Casio"
 }
