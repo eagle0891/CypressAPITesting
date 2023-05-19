@@ -1,6 +1,6 @@
 import * as amazonModule from '../../../support/AmazonModules/amazon-module.cy'
 
-const prop = require('../../../fixtures/amazon-properties')
+const prop = require('../../../fixtures/amazon-properties.json')
 
 describe('PLP test', () =>{
 
@@ -22,7 +22,7 @@ describe('PLP test', () =>{
             const productPriceText = $element.find(prop.productPrice).text()
             const productImage = $element.find(prop.productImage)
             const productTitleLink = $element.find(prop.productTitleLink)
-            if(productBrandText==prop.searchTerm){
+            if(productBrandText==prop.brandTerm){
                 cy.log(prop.searchTerm + ' brand: ' + productBrandText)
                 cy.log(prop.searchTerm + ' product link title: ' + productTitleLinkText)
                 cy.log(prop.searchTerm + ' product price: ' + productPriceText)

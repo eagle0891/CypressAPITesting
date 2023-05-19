@@ -8,7 +8,13 @@
     "allTests": "cypress run",
     "amazonSuite": "cypress run --spec 'cypress/e2e/UITests/Amazon/*.cy.js'",
     "scripts": "cypress run",
-    "test": "npx cypress run"
+    "electron-test": "npx cypress run",
+    "electron-script": "npm run electron-test || npm run merge-reports",
+    "chrome-test": "npx cypress run --browser chrome --headless",
+    "chrome-script": "npm run chrome-test || npm run merge-reports",
+    "firefox-test": "npx cypress run --browser firefox --headless",
+    "firefox-script": "npm run firefox-test || npm run merge-reports",
+    "merge-reports": "jrm combined.xml \"results/*.xml\""
   },
   "author": "Ugo Agwo",
   "license": "ISC",
@@ -16,7 +22,8 @@
     "@faker-js/faker": "^7.6.0",
     "cypress": "^12.12.0",
     "cypress-mochawesome-reporter": "^3.4.0",
-    "faker": "^6.6.6"
+    "faker": "^6.6.6",
+    "junit-report-merger": "^6.0.2"
   },
   "dependencies": {
     "axios": "^1.4.0"

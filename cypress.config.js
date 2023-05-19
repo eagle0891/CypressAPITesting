@@ -1,34 +1,27 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  "reporter": "cypress-mochawesome-reporter",
+  // "reporter": "cypress-mochawesome-reporter",
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "results/results-[hash].xml"
+  },
   e2e: {
     // specPattern: "cypress/e2e/**/*.*",
-    specPattern: "cypress/e2e/UITests/Amazon",
+    specPattern: "cypress/e2e/UITests/*/*.cy.js",
     setupNodeEvents(on, config) {
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
     },
     "retries": {
       // Configure retry attempts for `cypress run`
-      "runMode": 3,
+      "runMode": 0,
       // Configure retry attempts for `cypress open`
-      "openMode": 3
+      "openMode": 0
     },
     "screenshotsFolder": "cypress/reports/mochareports/assets",
     "screenshotOnRunFailure": true,
-    "video": true,
+    "video": false,
     "chromeWebSecurity": false,
-    // "reporter": "cypress-multi-reporters",
-    // "reporterOptions": {
-    //     "reporterEnabled": "mochawesome",
-    //     "mochawesomeReporterOptions": {
-    //         "reportDir": "cypress/reports/mocha",
-    //         "quite": true,
-    //         "overwrite": false,
-    //         "html": false,
-    //         "json": true
-    //     }
-    // }
   },
 });
