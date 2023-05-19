@@ -4,13 +4,18 @@
   "description": "Cypress API Testing Framework",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "tests": "cypress open",
+    "allTests": "cypress run",
+    "amazonSuite": "cypress run --spec 'cypress/e2e/UITests/Amazon/*.cy.js'",
+    "scripts": "cypress run",
+    "test": "npx cypress run"
   },
   "author": "Ugo Agwo",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "cypress": "^12.12.0",
+    "cypress-mochawesome-reporter": "^3.4.0",
     "faker": "^6.6.6"
   },
   "dependencies": {
