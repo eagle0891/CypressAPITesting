@@ -81,7 +81,11 @@ export const catchException = () => {
           if (err.message.includes('EmeNotSupportedError:')) {
             return false
           }
+          if (err.message.includes('Internal Server Error')) {
+            return false
+          }
+          if (err.message.includes('ReferenceError: markFeatureRenderForImageBlock is not defined')) {
+            return false
+          }
     })
 }
-
-

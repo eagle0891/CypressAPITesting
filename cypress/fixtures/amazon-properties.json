@@ -14,7 +14,7 @@
     "plpProductGalleryTile": ".a-section.a-spacing-base.a-text-center",
     "productBrandText": ".s-line-clamp-1 .a-size-base-plus.a-color-base",
     "productTitleLink": ".a-size-base-plus.a-color-base.a-text-normal",
-    "productPrice": ".s-price-instructions-style .a-price .a-offscreen",
+    "productPrice": ".a-price:nth-child(1) .a-offscreen",
     "productImage": ".s-image-tall-aspect .s-image",
 
     "searchTerm": "watch",
