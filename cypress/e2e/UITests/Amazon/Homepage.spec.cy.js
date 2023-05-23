@@ -78,17 +78,23 @@ describe('Homepage navigation', () => {
             .then(href => {
                 extractedHref = href;
             }).then(()=>{
+                amazonModule.catchException();
                 if(extractedHref=='/Kindle-eBooks-books/b/?ie=UTF8&node=341689031&ref_=nav_cs_kindle_books') {
                     cy.url().should('contain', 'https://www.amazon.co.uk').and('contain', '/kindle-dbs/storefront?storeType=browse');
+                    
                 }
                 else {
                     const truncatedValue = extractedHref.substring(extractedHref.indexOf('?'));
                 
                         cy.url().should('contain', 'https://www.amazon.co.uk').and('contain', truncatedValue);
-                        amazonModule.catchException();
+                        // amazonModule.catchException();
                     }
                 });
             amazonModule.catchException();
         })  
+    })
+
+    it('Add an item to cart', () => {
+
     })
 })
