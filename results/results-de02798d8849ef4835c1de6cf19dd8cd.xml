@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="25.591" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-02-10T17:26:16" tests="0" file="cypress\e2e\UITests\Amazon\Homepage.spec.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Homepage navigation" timestamp="2024-02-10T17:26:16" tests="1" time="25.575" failures="0">
+    <testcase name="Homepage navigation Sign in / sign-up navigation" time="20.751" classname="Sign in / sign-up navigation">
+    </testcase>
+  </testsuite>
+</testsuites>
